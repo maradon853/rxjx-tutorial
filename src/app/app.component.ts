@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
-//import { timer, of } from "rxjs";
+import { timer, of } from "rxjs";
 
-/*const source = timer(1000, 2000);
+const source = timer(1000, 2000);
 const subscribe = source.subscribe(val => console.log(val));
 setTimeout(() => {
   subscribe.unsubscribe();
@@ -13,7 +13,7 @@ const myObserver = {
   next: (x: string) => console.log("Observer got a next value: " + x),
   error: (err: string) => console.error("Observer got an error: " + err),
   complete: () => console.log("Observer COMPLETE")
-};*/
+};
 
 @Component({
   selector: "app-root",
@@ -23,6 +23,7 @@ const myObserver = {
 export class AppComponent {
   title = "rxjs-tut";
   constructor() {
-    //myObservable.subscribe(myObserver);
+    myObservable.subscribe(myObserver);
+    subscribe.unsubscribe();
   }
 }
