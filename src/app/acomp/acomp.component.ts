@@ -4,6 +4,7 @@ import { Router, NavigationStart } from "@angular/router";
 import { filter } from "rxjs/operators";
 import { Observable } from "rxjs";
 
+
 @Component({
   selector: "app-acomp",
   templateUrl: "./acomp.component.html",
@@ -12,6 +13,7 @@ import { Observable } from "rxjs";
 export class AcompComponent implements OnInit {
   data: any;
   navStart: Observable<NavigationStart>;
+  color: '#87CEEB';
 
   constructor(private router: Router, private sharedData: SharedService) {
     this.navStart = router.events.pipe(

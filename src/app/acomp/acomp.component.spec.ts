@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { By } from '@angular/platform-browser';
 import { AcompComponent } from './acomp.component';
 
 describe('AcompComponent', () => {
@@ -22,4 +22,13 @@ describe('AcompComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('background should have correct color', () => {
+    component.color = '#87CEEB';
+    fixture.detectChanges();
+    const colorEl: HTMLElement = fixture.debugElement.query(By.css('.colored-div')).nativeElement;
+    expect(colorEl.style.backgroundColor).toBe('#87CEEB');
+});
+
+  
 });
